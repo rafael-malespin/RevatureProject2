@@ -26,8 +26,8 @@ Current Features
 - Users can add comments to posts
 - Users can enter their profile to view their old posts, view their public information, and edit their public information (including uploading a profile picture). They can also updated their password after password validation is completed.
 - Users can reset their password via email as long as the email they used to register their account is valid.
-- Users are able to communicate with each other over a public chat room that stores the last 25 messages that were sent and keeps track of those who are logged in
-To-Do Features
+- Users are able to communicate with each other over a public chat room that stores the last 25 messages that were sent and keeps track of those who are logged in.
+To Do Features
 - Implement Integration Testing
 - Sucessfully deploy project on EC2
 - Implement Notifications of Likes and Comments
