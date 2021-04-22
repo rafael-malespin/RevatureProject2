@@ -65,7 +65,14 @@ Current Features
   - In Server Port, change the port to be "9001" or another port as long as you change the endpoints in the Angular side of the project
   - Click "Apply" and then "Okay"
   - Run the tomcat server and the Server is be ready to receive requests from the Client
-- Sixth
+- Sixth, you will need to start up the Client Server
+  - Open Visual Studio Code
+  - Select "Open folder" and navigate to where you have the repository
+  - In the repository, select the AngularClient folder then open Project 2 folder in Visual Studio Code
+  - Once the project is open, open a terminal in Visual Studio Code and cd into the Project 2 folder if it is not already
+  - Run the command "npm install" and wait for it to finish
+  - (Optional) if once compilation is complete, if the message states "npm audit -fix" is needed then run that command
+  - Run the command "ng serve -o" in the terminal and wait for the Client-Side server to start which should open the Client side website in the default browser.
 
 ## Usage
 
