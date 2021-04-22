@@ -77,4 +77,7 @@ Current Features
 ## Usage
 
 ## Contributors
- 
+ - Michael Loutfi
+ - Sam Jenkins
+ - Suliman Sam
+ - Rafael Malespin
