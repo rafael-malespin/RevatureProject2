@@ -1,0 +1,45 @@
+<!-- <img src="http://www.goodmorningimagesdownload.com/wp-content/uploads/2020/06/Cool-Whatsapp-DP-7.jpg"> -->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+        
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+        
+
+    <div class="container-fluid gedf-wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div></div>
+                        <img class="rounded-circle" onerror="this.src='https://rev-training-p2-bucket.s3.us-east-2.amazonaws.com/Project_2_Logo.png'" [src]="loggedInUser?.profilePic">
+                        <div class="h5"><a routerLink="">@{{loggedInUser?.username}}</a></div>
+                        <div class="h7 text-muted">{{loggedInUser?.emailAddress}}</div>
+                        <div class="h7">{{loggedInUser?.description}}</div>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="h6 text-muted"><a routerLink="">Followers</a></div>
+                            <div class="h5">5M</div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="h6 text-muted"><a routerLink="">Following</a></div>
+                            <div class="h5">5</div>
+                        </li>
+                        <li class="list-group-item">********************</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>

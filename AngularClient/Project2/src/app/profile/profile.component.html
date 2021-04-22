@@ -1,0 +1,239 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<div class="main-content">
+     
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+      <div class="row">
+        <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+          <div class="card card-profile shadow">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                <div class="card-profile-image">
+                  <a href="#">
+                    <img onerror="this.src='https://rev-training-p2-bucket.s3.us-east-2.amazonaws.com/Project_2_Logo.png'" [src]='currentUser?.profilePic' class="big-rounded-circle">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="card-body pt-0 pt-md-4">
+              <div class="row">
+                <div class="col">
+                  
+                </div>
+              </div>
+              <br><br><br><br>
+              <div class="text-center">
+                <h3>
+                  {{currentUser?.firstName +" "+ currentUser?.lastName}}
+                </h3>
+                <div class="h5 font-weight-300">
+                    {{currentUser.emailAddress}}
+                </div>
+                
+                <div>
+                  <i class="ni education_hat mr-2"></i>@{{currentUser?.username}}
+                </div>
+                <hr class="my-4">
+                <p>{{currentUser?.description}}</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-8 order-xl-1">
+          <div class="card bg-secondary shadow">
+            <div class="card-header bg-white border-0">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">My account</h3>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="container-fluid gedf-wrapper">
+            <div class="row">
+            <div class="col-md-12 gedf-main">
+            <!--- \\\\\\\Post-->
+            <div class="card gedf-card">
+              <div class="card-header">
+                  <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                      <li class="nav-item">
+                          <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">My Posts</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profileSetting" role="tab" aria-controls="profileSetting" aria-selected="false" >Profile Setting</a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="card-body">
+
+                  <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                        <div class="container-fluid gedf-wrapper">
+                        <div class="row">
+                        <div class="col-md-12 gedf-main">
+                        <!--- \\\\\\\Post-->
+                        <div *ngFor="let post of posts" class="card gedf-card postCard">
+                          <div class="card-header">
+                              <div class="d-flex justify-content-between align-items-center">
+                                  <div class="d-flex justify-content-between align-items-center">
+                                      <div class="mr-2">
+                                          <img class="rounded-circle" [src]='post?.creator?.profilePic' alt="">
+                                      </div>
+                                      <div class="ml-2">
+                                          <div class="h5 m-0">@{{post?.creator?.username}}</div>
+                                          <div class="h7 text-muted">{{post?.creator?.firstName}} {{post?.creator?.lastName}}</div>
+                                      </div>
+                                  </div>
+                                  
+                              </div>
+
+                          </div>
+                          <div class="card-body">
+                              <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> {{post?.postedAt | date:'medium'}}</div>
+
+                              <p class="card-text">
+                                  {{post?.postContent}}
+                              </p>
+                              <div class="vid-container" *ngIf="post.postImageUrl!=null">
+                                  <img height="100%" width="100%" onerror="this.src='https://rev-training-p2-bucket.s3.us-east-2.amazonaws.com/Project_2_Logo.png'" [src]="post.postImageUrl" alt="">
+                              </div>
+                              <div class="vid-container" *ngIf="post.youtubeUrl!=null">
+                                  <iframe width="100%" height="350" [src]="post.youtubeUrl | safe" frameborder="0" allowfullscreen></iframe>
+                              </div>
+                              
+                          </div>
+                          <div class="card-footer">
+                              <span *ngIf="checkIfPostIsLiked(post); else postIsNotLiked">
+                                  <button href="" class="btn btn-link" style="color: green;"><i class="fa fa-gittip"></i> Liked <span class="badge badge-danger">{{post?.usersWhoLiked.length}}</span></button>
+                              </span>
+                              <ng-template #postIsNotLiked>
+                                  <button href="" class="btn btn-link" ><i class="fa fa-gittip"></i> Like <span class="badge badge-danger">{{post?.usersWhoLiked.length}}</span></button>
+                              </ng-template>
+                              
+                              <a href="#" class="card-link" (click)="addComment()"><i class="fa fa-comment"></i> Comment</a>
+                          </div>
+                      </div>
+                      <!-- Post /////-->
+                      </div>
+                      </div>
+                      </div>
+
+                </div>
+
+                          <div class="tab-pane fade" id="profileSetting" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="card bg-secondary shadow">
+                              <div class="card-body">
+                                <form [formGroup]="updateForm"   (ngSubmit)= "updateUserInfo()">
+                                  <h6 class="heading-small text-muted mb-4">User information</h6>
+                                  <div class="pl-lg-4">
+                                    <div class="row">
+                                      <div class="col-lg-6">
+                                        <div class="form-group">
+                                          <label class="form-control-label" for="input-email">Profile Image</label>
+                                          <input type="file" id="input-image" accept="image/x-png,image/gif,image/jpeg" class="form-control form-control-alternative" placeholder="Select Your Image" formControlName = "imageInput" (change)="handleFileInput($event.target.files)">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-lg-6">
+                                        <div class="form-group focused">
+                                          <label class="form-control-label" for="input-username">Username</label>
+                                          
+                                          <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" [value]="userName" formControlName = "userNameInput" readonly>
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-6">
+                                        <div class="form-group">
+                                          <label class="form-control-label" for="input-email">Email address</label>
+                                          <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="Email" [value]="email" formControlName = "emailInput" readonly>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-lg-6">
+                                        <div class="form-group focused">
+                                          <label class="form-control-label" for="input-first-name">First name</label>
+                                          <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" [value]="firstName" formControlName = "firstNameInput">
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-6">
+                                        <div class="form-group focused">
+                                          <label class="form-control-label" for="input-last-name">Last name</label>
+                                          <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" [value]="lastName" formControlName = "lastNameInput">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                  
+                  
+                                  <hr class="my-4">
+                                  
+                                  <input id="password-change" type="checkbox" class="switch" (change)="checkValue($event.target)">
+                                  
+                                  <h6 class="heading-small text-muted mb-4">User Password</h6>
+                                  <div class="pl-lg-4" id="passwordBlock">
+                                    <div class="row">
+                                      <div class="col-lg-4">
+                                        <div class="form-group focused">
+                                          <label class="form-control-label" for="input-new-password">New Password</label>
+                                          
+                                          <input type="text" id="input-new-password" class="form-control form-control-alternative" placeholder="New Password">
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-4">
+                                        <div class="form-group focused">
+                                          <label class="form-control-label" for="input-renew-password">RE-New Password</label>
+                                          
+                                          <input type="text" id="input-renew-password" class="form-control form-control-alternative" placeholder="RE-New Password">
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-4">
+                                        <div class="form-group">
+                                          <label class="form-control-label" for="input-old-password">Old Password</label>
+                                          <input type="email" id="input-old-password" class="form-control form-control-alternative" placeholder="Old Password">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                  
+                                  <hr class="my-4">
+                                  <!-- Description -->
+                                  <h6 class="heading-small text-muted mb-4">About me</h6>
+                                  <div class="pl-lg-4">
+                                    <div class="form-group focused">
+                                      <label>About Me</label>
+                                      <textarea id="input-description" rows="4" class="form-control form-control-alternative" placeholder="A few words about you ..." [value]="description" formControlName = "descriptionInput"></textarea>
+                                    </div>
+                                  </div>
+                  
+                                  <div class="col-12 text-right">
+                                      <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                            
+                              <div class="py-4"></div>
+                          </div>
+                        
+                      </div>
+                      
+                  </div>
+              </div>
+              <!-- Post /////-->
+              </div>
+              </div>
+              </div>
+
+            
+          </div>
+        </div>
+    </div>
+    
+  </div>

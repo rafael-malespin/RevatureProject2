@@ -1,0 +1,145 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<div class="wrapper">
+    <div class="two">
+        <br>
+        <div class="row justify-content-center padding">
+            <div class="col-md-8 ftco-animate fadeInUp ftco-animated">
+                <form [formGroup]="searchForm" class="domain-form">
+                    <div class="form-group d-md-flex"> 
+                      <input type="text" list="users" class="form-control px-4" placeholder="Search for Users" formControlName="userName"> 
+                      <input type="submit" class="search-domain btn btn-primary px-5" value="Search" (click)="selectUser()">  
+                      <datalist id="users">
+                        <option *ngFor="let user of users" [value]="user.username">
+                      </datalist>
+                        
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="three">
+
+<br><br><br><br><br><br>
+        <div class="main-content">
+    
+            <!-- Page content -->
+            <div class="container-fluid mt--7">
+              <div class="row">
+                <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+                  <div class="card card-profile shadow">
+                    <div class="row justify-content-center">
+                      <div class="col-lg-3 order-lg-2">
+                        <div class="card-profile-image">
+                          <a href="#">
+                            <img [src]="selectedUser?.profilePic" class="rounded-circle">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="card-body pt-0 pt-md-4">
+                      <div class="row">
+                        <div class="col">
+                          
+                        </div>
+                      </div>
+                      <br><br><br><br>
+                      <div class="text-center">
+                        <h3>
+                          {{selectedUser?.firstName +" "+ selectedUser?.lastName}}
+                        </h3>
+                        <div class="h5 font-weight-300">
+                            {{selectedUser?.emailAddress}}
+                        </div>
+                        
+                        <div>
+                          <i class="ni education_hat mr-2"></i>@{{selectedUser?.username}}
+                        </div>
+                        <hr class="my-4">
+                        <p>{{selectedUser?.description}}</p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-8 order-xl-1">
+                  <div class="card bg-secondary shadow">
+                    <div class="card-header bg-white border-0">
+                      <div class="row align-items-center">
+                        <div class="col-8">
+                          <h3 class="mb-0">Posts</h3>
+                        </div>
+                        <div class="container-fluid gedf-wrapper">
+                            <div class="row">
+                            <div class="col-md-12 gedf-main">
+
+                            <!--- \\\\\\\Post-->
+                            
+                            <div *ngFor="let post of userPosts" class="card gedf-card postCard">
+                              <div class="card-header">
+                                  <div class="d-flex justify-content-between align-items-center">
+                                      <div class="d-flex justify-content-between align-items-center">
+                                          <div class="mr-2">
+                                              <img class="rounded-circle" width="45" [src]="post?.creator?.profilePic" alt="" onerror='this.src="https://rev-training-p2-bucket.s3.us-east-2.amazonaws.com/Project_2_Logo.png"' >
+                                          </div>
+                                          <div class="ml-2">
+                                              <div class="h5 m-0">@{{post?.creator?.username}}</div>
+                                              <div class="h7 text-muted">{{post?.creator?.firstName}} {{post?.creator?.lastName}}</div>
+                                          </div>
+                                      </div>
+                                      
+                                  </div>
+        
+                              </div>
+                              <div class="card-body">
+                                  <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> {{post?.postedAt | date:'medium'}}</div>
+        
+                                  <p class="card-text">
+                                      {{post?.postContent}}
+                                  </p>
+                                  <div class="vid-container" *ngIf="post.postImageUrl!=null">
+                                      <img height="100%" width="100%" [src]="post.postImageUrl" alt="">
+                                  </div>
+                                  <div class="vid-container" *ngIf="post.youtubeUrl!=null">
+                                      <iframe width="100%" height="350" [src]="post.youtubeUrl | safe" frameborder="0" allowfullscreen></iframe>
+                                  </div>
+                                  
+                              </div>
+                              <div class="card-footer">
+                                  <span *ngIf="checkIfPostIsLiked(post); else postIsNotLiked">
+                                      <button href="" class="btn btn-link" style="color: green;" (click)=toggleLike(post,true)><i class="fa fa-gittip"></i> Liked <span class="badge badge-danger">{{post?.usersWhoLiked.length}}</span></button>
+                                  </span>
+                                  <ng-template #postIsNotLiked>
+                                      <button href="" class="btn btn-link" (click)=toggleLike(post,false)><i class="fa fa-gittip"></i> Like <span class="badge badge-danger">{{post?.usersWhoLiked.length}}</span></button>
+                                  </ng-template>
+                                  
+                                  <a href="#" class="card-link" (click)="addComment()"><i class="fa fa-comment"></i> Comment</a>
+                              </div>
+                          </div>
+                          <!-- Post /////-->
+                          </div>
+                          </div>
+                          </div>
+                      </div>
+                    </div>
+        
+                    
+        
+                    
+                  </div>
+                </div>
+            </div>
+            
+          </div>
+
+
+
+    </div>
+
+</div>
+
+
+

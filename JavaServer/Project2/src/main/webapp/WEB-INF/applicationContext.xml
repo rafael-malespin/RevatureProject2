@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <!--turn on context annotations-->
+    <context:annotation-config/>
+
+
+    <!--package scanning. YOu can use "example" to scan the "example" package and all subpackages-->
+    <context:component-scan base-package="com"/>
+
+
+
+    <!--turn on Spring ORM annotations-->
+    <tx:annotation-driven/>
+
+    <!--turn on Spring MVC annotations-->
+    <mvc:annotation-driven/>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+    <!--DATASOURCE
+        Datasource is an object that holds all the attributes necessary to connect to your database
+    -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url"
+                  value="#{'jdbc:postgresql://'+systemEnvironment['TRAINING_DB_ENDPOINT']+'/'+systemEnvironment['TRAINING_DB_NAME']}"/>
+        <property name="username" value="#{systemEnvironment['TRAINING_DB_USERNAME']}"/>
+        <property name="password" value="#{systemEnvironment['TRAINING_DB_PASSWORD']}"/>
+    </bean>
+
+
+
+
+
+
+
+    <!--SESSION FACTORY
+        Session factory is an object that is responsible for creating Hibernate sessions
+    -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="com.model"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">
+                    org.hibernate.dialect.PostgreSQL82Dialect
+                </prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.format_sql">false</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+
+        </property>
+    </bean>
+
+
+
+    <!--TRANSACTION MANAGER
+        This bean is responsible for managing your transactions (big surprise)
+        AND also manages our contextual sessions
+
+        What are contextual sessions (hibernate sessions)?
+        Sessions with information SPECIFIC to each user. They make it so that each user ONLY SEES
+        THEIR INFORMATION, not someone else's.
+    -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+</beans>

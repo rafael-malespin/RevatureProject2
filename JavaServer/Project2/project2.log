@@ -1,0 +1,998 @@
+2021-04-18 19:12:54 DEBUG TypeSafeActivator:94 - Unable to acquire Bean Validation ValidatorFactory, skipping activation
+2021-04-18 19:12:54 DEBUG JaccIntegrator:80 - Skipping JACC integration as it was not enabled
+2021-04-18 19:12:54 DEBUG SessionFactoryImpl:300 - Instantiated session factory
+2021-04-18 19:12:54 DEBUG TypeConfiguration$Scope:157 - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@365e7af5] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@1e113279]
+2021-04-18 19:12:54 DEBUG ClassLoaderAccessImpl:60 - Not known whether passed class name [com.model.Comment] is safe
+2021-04-18 19:12:54 DEBUG ClassLoaderAccessImpl:62 - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.model.Comment
+2021-04-18 19:12:54 DEBUG ClassLoaderAccessImpl:60 - Not known whether passed class name [com.model.Post] is safe
+2021-04-18 19:12:54 DEBUG ClassLoaderAccessImpl:62 - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.model.Post
+2021-04-18 19:12:54 DEBUG ClassLoaderAccessImpl:60 - Not known whether passed class name [com.model.User] is safe
+2021-04-18 19:12:54 DEBUG ClassLoaderAccessImpl:62 - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.model.User
+2021-04-18 19:12:54 DEBUG ClassLoaderAccessImpl:60 - Not known whether passed class name [com.model.Like] is safe
+2021-04-18 19:12:54 DEBUG ClassLoaderAccessImpl:62 - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.model.Like
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:692 - Static SQL for collection: com.model.User.posts
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:694 -  Row insert: update posts set creator_user_id=? where post_id=?
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:697 -  Row update: update posts set  where post_id=?
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:700 -  Row delete: update posts set creator_user_id=null where creator_user_id=? and post_id=?
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:703 -  One-shot delete: update posts set creator_user_id=null where creator_user_id=?
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:692 - Static SQL for collection: com.model.Post.usersWhoLiked
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:694 -  Row insert: update likes set post_FK=? where like_id=?
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:697 -  Row update: update likes set  where like_id=?
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:700 -  Row delete: update likes set post_FK=null where post_FK=? and like_id=?
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:703 -  One-shot delete: update likes set post_FK=null where post_FK=?
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:692 - Static SQL for collection: com.model.Post.comments
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:694 -  Row insert: update comments set post_id=? where comment_id=?
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:697 -  Row update: update comments set  where comment_id=?
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:700 -  Row delete: update comments set post_id=null where post_id=? and comment_id=?
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:703 -  One-shot delete: update comments set post_id=null where post_id=?
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:692 - Static SQL for collection: com.model.User.likes
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:694 -  Row insert: update likes set user_FK=? where like_id=?
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:697 -  Row update: update likes set  where like_id=?
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:700 -  Row delete: update likes set user_FK=null where user_FK=? and like_id=?
+2021-04-18 19:12:54 DEBUG AbstractCollectionPersister:703 -  One-shot delete: update likes set user_FK=null where user_FK=?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:3918 - Static SQL for entity: com.model.Comment
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:3923 -  Version select: select comment_id from comments where comment_id =?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:3926 -  Snapshot select: select comment_.comment_id, comment_.comment_content as comment_2_0_, comment_.post_id as post_id4_0_, comment_.user_id as user_id5_0_, comment_.commented_at as commente3_0_ from comments comment_ where comment_.comment_id=?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:394 -  Insert 0: insert into comments (comment_content, post_id, user_id, commented_at, comment_id) values (?, ?, ?, ?, ?)
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:394 -  Update 0: update comments set comment_content=?, post_id=?, user_id=?, commented_at=? where comment_id=?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:394 -  Delete 0: delete from comments where comment_id=?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:3934 -  Identity insert: insert into comments (comment_content, post_id, user_id, commented_at) values (?, ?, ?, ?)
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@41eda2a6]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentContent
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6b97d190]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.comments
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : commentPost.comments
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@467f9706]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.description
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.emailAddress
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.firstName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.lastName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.likes
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@70b548d3]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@26c1fa9d]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.likes.post
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@77ba9c34]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.likes.post.comments
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : commentPost.creator.likes.post.comments
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.likes.post.creator
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : commentPost.creator.likes.post.creator
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.likes.post.postContent
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.likes.post.postImageUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.likes.post.postTitle
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.likes.post.postedAt
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.likes.post.usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : commentPost.creator.likes.post.usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.likes.post.youtubeUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.likes.user
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : commentPost.creator.likes.user
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.password
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.posts
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : commentPost.creator.posts
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.profilePic
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.creator.username
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.postContent
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.postImageUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.postTitle
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.postedAt
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : commentPost.usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost.youtubeUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:6> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@612a0d40]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.description
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.emailAddress
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.firstName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.lastName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.likes
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : commentWriter.likes
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.password
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.posts
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : commentWriter.posts
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.profilePic
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.username
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentedAt
+2021-04-18 19:12:55 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:160 - Building LoadPlan...
+2021-04-18 19:12:55 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2021-04-18 19:12:55 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=com.model.Comment)
+    - Returns
+       - EntityReturnImpl(entity=com.model.Comment, querySpaceUid=<gen:0>, path=com.model.Comment)
+          - EntityAttributeFetchImpl(entity=com.model.Post, querySpaceUid=<gen:1>, path=com.model.Comment.commentPost)
+             - EntityAttributeFetchImpl(entity=com.model.User, querySpaceUid=<gen:2>, path=com.model.Comment.commentPost.creator)
+                - CollectionAttributeFetchImpl(collection=com.model.User.likes, querySpaceUid=<gen:3>, path=com.model.Comment.commentPost.creator.likes)
+                   - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Like, querySpaceUid=<gen:4>, path=com.model.Comment.commentPost.creator.likes.<elements>)
+                      - EntityAttributeFetchImpl(entity=com.model.Post, querySpaceUid=<gen:5>, path=com.model.Comment.commentPost.creator.likes.<elements>.post)
+          - EntityAttributeFetchImpl(entity=com.model.User, querySpaceUid=<gen:6>, path=com.model.Comment.commentWriter)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.model.Comment)
+          - SQL table alias mapping - comment0_
+          - alias suffix - 0_
+          - suffixed key columns - {comment_1_0_0_}
+          - JOIN (JoinDefinedByMetadata(commentPost)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.model.Post)
+                - SQL table alias mapping - post1_
+                - alias suffix - 1_
+                - suffixed key columns - {post_id1_2_1_}
+                - JOIN (JoinDefinedByMetadata(creator)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.model.User)
+                      - SQL table alias mapping - user2_
+                      - alias suffix - 2_
+                      - suffixed key columns - {user_id1_3_2_}
+                      - JOIN (JoinDefinedByMetadata(likes)) : <gen:2> -> <gen:3>
+                         - CollectionQuerySpaceImpl(uid=<gen:3>, collection=com.model.User.likes)
+                            - SQL table alias mapping - likes3_
+                            - alias suffix - 3_
+                            - suffixed key columns - {user_fk3_1_3_}
+                            - entity-element alias suffix - 4_
+                            - 4_entity-element suffixed key columns - like_id1_1_4_
+                            - JOIN (JoinDefinedByMetadata(elements)) : <gen:3> -> <gen:4>
+                               - EntityQuerySpaceImpl(uid=<gen:4>, entity=com.model.Like)
+                                  - SQL table alias mapping - likes3_
+                                  - alias suffix - 4_
+                                  - suffixed key columns - {like_id1_1_4_}
+                                  - JOIN (JoinDefinedByMetadata(post)) : <gen:4> -> <gen:5>
+                                     - EntityQuerySpaceImpl(uid=<gen:5>, entity=com.model.Post)
+                                        - SQL table alias mapping - post4_
+                                        - alias suffix - 5_
+                                        - suffixed key columns - {post_id1_2_5_}
+          - JOIN (JoinDefinedByMetadata(commentWriter)) : <gen:0> -> <gen:6>
+             - EntityQuerySpaceImpl(uid=<gen:6>, entity=com.model.User)
+                - SQL table alias mapping - user5_
+                - alias suffix - 6_
+                - suffixed key columns - {user_id1_3_6_}
+
+2021-04-18 19:12:55 DEBUG EntityLoader:129 - Static select for entity com.model.Comment [NONE]: select comment0_.comment_id as comment_1_0_0_, comment0_.comment_content as comment_2_0_0_, comment0_.post_id as post_id4_0_0_, comment0_.user_id as user_id5_0_0_, comment0_.commented_at as commente3_0_0_, post1_.post_id as post_id1_2_1_, post1_.creator_user_id as creator_7_2_1_, post1_.post_content as post_con2_2_1_, post1_.post_image_link as post_ima3_2_1_, post1_.post_title as post_tit4_2_1_, post1_.posted_at as posted_a5_2_1_, post1_.youtube_link as youtube_6_2_1_, user2_.user_id as user_id1_3_2_, user2_.user_description as user_des2_3_2_, user2_.email_address as email_ad3_3_2_, user2_.user_first_name as user_fir4_3_2_, user2_.user_last_name as user_las5_3_2_, user2_.pass_word as pass_wor6_3_2_, user2_.profile_picture as profile_7_3_2_, user2_.user_name as user_nam8_3_2_, likes3_.user_FK as user_fk3_1_3_, likes3_.like_id as like_id1_1_3_, likes3_.like_id as like_id1_1_4_, likes3_.post_FK as post_fk2_1_4_, likes3_.user_FK as user_fk3_1_4_, post4_.post_id as post_id1_2_5_, post4_.creator_user_id as creator_7_2_5_, post4_.post_content as post_con2_2_5_, post4_.post_image_link as post_ima3_2_5_, post4_.post_title as post_tit4_2_5_, post4_.posted_at as posted_a5_2_5_, post4_.youtube_link as youtube_6_2_5_, user5_.user_id as user_id1_3_6_, user5_.user_description as user_des2_3_6_, user5_.email_address as email_ad3_3_6_, user5_.user_first_name as user_fir4_3_6_, user5_.user_last_name as user_las5_3_6_, user5_.pass_word as pass_wor6_3_6_, user5_.profile_picture as profile_7_3_6_, user5_.user_name as user_nam8_3_6_ from comments comment0_ left outer join posts post1_ on comment0_.post_id=post1_.post_id left outer join users user2_ on post1_.creator_user_id=user2_.user_id left outer join likes likes3_ on user2_.user_id=likes3_.user_FK left outer join posts post4_ on likes3_.post_FK=post4_.post_id left outer join users user5_ on comment0_.user_id=user5_.user_id where comment0_.comment_id=?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:3918 - Static SQL for entity: com.model.Post
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:3923 -  Version select: select post_id from posts where post_id =?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:3926 -  Snapshot select: select post_.post_id, post_.creator_user_id as creator_7_2_, post_.post_content as post_con2_2_, post_.post_image_link as post_ima3_2_, post_.post_title as post_tit4_2_, post_.posted_at as posted_a5_2_, post_.youtube_link as youtube_6_2_ from posts post_ where post_.post_id=?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:394 -  Insert 0: insert into posts (creator_user_id, post_content, post_image_link, post_title, posted_at, youtube_link, post_id) values (?, ?, ?, ?, ?, ?, ?)
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:394 -  Update 0: update posts set creator_user_id=?, post_content=?, post_image_link=?, post_title=?, posted_at=?, youtube_link=? where post_id=?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:394 -  Delete 0: delete from posts where post_id=?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:3934 -  Identity insert: insert into posts (creator_user_id, post_content, post_image_link, post_title, posted_at, youtube_link) values (?, ?, ?, ?, ?, ?)
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@66d07f4a]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@7998eeab]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@487c3718]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentContent
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentPost
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : comments.commentPost
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@295311ae]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.description
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.emailAddress
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.firstName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.lastName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@34e2f4b5]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@21b5f0ba]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:6> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@42caa490]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.comments
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : comments.commentWriter.likes.post.comments
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.creator
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:7> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@e36f6cd]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.creator.description
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.creator.emailAddress
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.creator.firstName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.creator.lastName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.creator.likes
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : comments.commentWriter.likes.post.creator.likes
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.creator.password
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.creator.posts
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : comments.commentWriter.likes.post.creator.posts
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.creator.profilePic
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.creator.username
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.postContent
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.postImageUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.postTitle
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.postedAt
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : comments.commentWriter.likes.post.usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.post.youtubeUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.likes.user
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : comments.commentWriter.likes.user
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.password
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.posts
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : comments.commentWriter.posts
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.profilePic
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentWriter.username
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments.commentedAt
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : creator
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : creator
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : postContent
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : postImageUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : postTitle
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : postedAt
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : youtubeUrl
+2021-04-18 19:12:55 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:160 - Building LoadPlan...
+2021-04-18 19:12:55 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2021-04-18 19:12:55 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=com.model.Post)
+    - Returns
+       - EntityReturnImpl(entity=com.model.Post, querySpaceUid=<gen:0>, path=com.model.Post)
+          - CollectionAttributeFetchImpl(collection=com.model.Post.comments, querySpaceUid=<gen:1>, path=com.model.Post.comments)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Comment, querySpaceUid=<gen:2>, path=com.model.Post.comments.<elements>)
+                - EntityAttributeFetchImpl(entity=com.model.User, querySpaceUid=<gen:3>, path=com.model.Post.comments.<elements>.commentWriter)
+                   - CollectionAttributeFetchImpl(collection=com.model.User.likes, querySpaceUid=<gen:4>, path=com.model.Post.comments.<elements>.commentWriter.likes)
+                      - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Like, querySpaceUid=<gen:5>, path=com.model.Post.comments.<elements>.commentWriter.likes.<elements>)
+                         - EntityAttributeFetchImpl(entity=com.model.Post, querySpaceUid=<gen:6>, path=com.model.Post.comments.<elements>.commentWriter.likes.<elements>.post)
+                            - EntityAttributeFetchImpl(entity=com.model.User, querySpaceUid=<gen:7>, path=com.model.Post.comments.<elements>.commentWriter.likes.<elements>.post.creator)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.model.Post)
+          - SQL table alias mapping - post0_
+          - alias suffix - 0_
+          - suffixed key columns - {post_id1_2_0_}
+          - JOIN (JoinDefinedByMetadata(comments)) : <gen:0> -> <gen:1>
+             - CollectionQuerySpaceImpl(uid=<gen:1>, collection=com.model.Post.comments)
+                - SQL table alias mapping - comments1_
+                - alias suffix - 1_
+                - suffixed key columns - {post_id4_0_1_}
+                - entity-element alias suffix - 2_
+                - 2_entity-element suffixed key columns - comment_1_0_2_
+                - JOIN (JoinDefinedByMetadata(elements)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.model.Comment)
+                      - SQL table alias mapping - comments1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {comment_1_0_2_}
+                      - JOIN (JoinDefinedByMetadata(commentWriter)) : <gen:2> -> <gen:3>
+                         - EntityQuerySpaceImpl(uid=<gen:3>, entity=com.model.User)
+                            - SQL table alias mapping - user2_
+                            - alias suffix - 3_
+                            - suffixed key columns - {user_id1_3_3_}
+                            - JOIN (JoinDefinedByMetadata(likes)) : <gen:3> -> <gen:4>
+                               - CollectionQuerySpaceImpl(uid=<gen:4>, collection=com.model.User.likes)
+                                  - SQL table alias mapping - likes3_
+                                  - alias suffix - 4_
+                                  - suffixed key columns - {user_fk3_1_4_}
+                                  - entity-element alias suffix - 5_
+                                  - 5_entity-element suffixed key columns - like_id1_1_5_
+                                  - JOIN (JoinDefinedByMetadata(elements)) : <gen:4> -> <gen:5>
+                                     - EntityQuerySpaceImpl(uid=<gen:5>, entity=com.model.Like)
+                                        - SQL table alias mapping - likes3_
+                                        - alias suffix - 5_
+                                        - suffixed key columns - {like_id1_1_5_}
+                                        - JOIN (JoinDefinedByMetadata(post)) : <gen:5> -> <gen:6>
+                                           - EntityQuerySpaceImpl(uid=<gen:6>, entity=com.model.Post)
+                                              - SQL table alias mapping - post4_
+                                              - alias suffix - 6_
+                                              - suffixed key columns - {post_id1_2_6_}
+                                              - JOIN (JoinDefinedByMetadata(creator)) : <gen:6> -> <gen:7>
+                                                 - EntityQuerySpaceImpl(uid=<gen:7>, entity=com.model.User)
+                                                    - SQL table alias mapping - user5_
+                                                    - alias suffix - 7_
+                                                    - suffixed key columns - {user_id1_3_7_}
+
+2021-04-18 19:12:55 DEBUG EntityLoader:129 - Static select for entity com.model.Post [NONE]: select post0_.post_id as post_id1_2_0_, post0_.creator_user_id as creator_7_2_0_, post0_.post_content as post_con2_2_0_, post0_.post_image_link as post_ima3_2_0_, post0_.post_title as post_tit4_2_0_, post0_.posted_at as posted_a5_2_0_, post0_.youtube_link as youtube_6_2_0_, comments1_.post_id as post_id4_0_1_, comments1_.comment_id as comment_1_0_1_, comments1_.comment_id as comment_1_0_2_, comments1_.comment_content as comment_2_0_2_, comments1_.post_id as post_id4_0_2_, comments1_.user_id as user_id5_0_2_, comments1_.commented_at as commente3_0_2_, user2_.user_id as user_id1_3_3_, user2_.user_description as user_des2_3_3_, user2_.email_address as email_ad3_3_3_, user2_.user_first_name as user_fir4_3_3_, user2_.user_last_name as user_las5_3_3_, user2_.pass_word as pass_wor6_3_3_, user2_.profile_picture as profile_7_3_3_, user2_.user_name as user_nam8_3_3_, likes3_.user_FK as user_fk3_1_4_, likes3_.like_id as like_id1_1_4_, likes3_.like_id as like_id1_1_5_, likes3_.post_FK as post_fk2_1_5_, likes3_.user_FK as user_fk3_1_5_, post4_.post_id as post_id1_2_6_, post4_.creator_user_id as creator_7_2_6_, post4_.post_content as post_con2_2_6_, post4_.post_image_link as post_ima3_2_6_, post4_.post_title as post_tit4_2_6_, post4_.posted_at as posted_a5_2_6_, post4_.youtube_link as youtube_6_2_6_, user5_.user_id as user_id1_3_7_, user5_.user_description as user_des2_3_7_, user5_.email_address as email_ad3_3_7_, user5_.user_first_name as user_fir4_3_7_, user5_.user_last_name as user_las5_3_7_, user5_.pass_word as pass_wor6_3_7_, user5_.profile_picture as profile_7_3_7_, user5_.user_name as user_nam8_3_7_ from posts post0_ left outer join comments comments1_ on post0_.post_id=comments1_.post_id left outer join users user2_ on comments1_.user_id=user2_.user_id left outer join likes likes3_ on user2_.user_id=likes3_.user_FK left outer join posts post4_ on likes3_.post_FK=post4_.post_id left outer join users user5_ on post4_.creator_user_id=user5_.user_id where post0_.post_id=?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:3918 - Static SQL for entity: com.model.User
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:3923 -  Version select: select user_id from users where user_id =?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:3926 -  Snapshot select: select user_.user_id, user_.user_description as user_des2_3_, user_.email_address as email_ad3_3_, user_.user_first_name as user_fir4_3_, user_.user_last_name as user_las5_3_, user_.pass_word as pass_wor6_3_, user_.profile_picture as profile_7_3_, user_.user_name as user_nam8_3_ from users user_ where user_.user_id=?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:394 -  Insert 0: insert into users (user_description, email_address, user_first_name, user_last_name, pass_word, profile_picture, user_name, user_id) values (?, ?, ?, ?, ?, ?, ?, ?)
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:394 -  Update 0: update users set user_description=?, email_address=?, user_first_name=?, user_last_name=?, pass_word=?, profile_picture=?, user_name=? where user_id=?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:394 -  Delete 0: delete from users where user_id=?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:3934 -  Identity insert: insert into users (user_description, email_address, user_first_name, user_last_name, pass_word, profile_picture, user_name) values (?, ?, ?, ?, ?, ?, ?)
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@d6f5972]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : description
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : emailAddress
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : firstName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : lastName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@5da9e879]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@739541e8]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@75989b8e]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@1939e644]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7c55e94d]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentContent
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentPost
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : likes.post.comments.commentPost
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:6> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6f2499d1]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.description
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.emailAddress
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.firstName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.lastName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.likes
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : likes.post.comments.commentWriter.likes
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.password
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.posts
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:7> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@73ca299f]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:8> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5b76b9]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.posts.comments
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : likes.post.comments.commentWriter.posts.comments
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.posts.creator
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : likes.post.comments.commentWriter.posts.creator
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.posts.postContent
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.posts.postImageUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.posts.postTitle
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.posts.postedAt
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.posts.usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : likes.post.comments.commentWriter.posts.usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.posts.youtubeUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.profilePic
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentWriter.username
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.comments.commentedAt
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.creator
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : likes.post.creator
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.postContent
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.postImageUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.postTitle
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.postedAt
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : likes.post.usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.post.youtubeUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : likes.user
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : likes.user
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : password
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : posts
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : posts
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : profilePic
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : username
+2021-04-18 19:12:55 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:160 - Building LoadPlan...
+2021-04-18 19:12:55 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2021-04-18 19:12:55 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=com.model.User)
+    - Returns
+       - EntityReturnImpl(entity=com.model.User, querySpaceUid=<gen:0>, path=com.model.User)
+          - CollectionAttributeFetchImpl(collection=com.model.User.likes, querySpaceUid=<gen:1>, path=com.model.User.likes)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Like, querySpaceUid=<gen:2>, path=com.model.User.likes.<elements>)
+                - EntityAttributeFetchImpl(entity=com.model.Post, querySpaceUid=<gen:3>, path=com.model.User.likes.<elements>.post)
+                   - CollectionAttributeFetchImpl(collection=com.model.Post.comments, querySpaceUid=<gen:4>, path=com.model.User.likes.<elements>.post.comments)
+                      - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Comment, querySpaceUid=<gen:5>, path=com.model.User.likes.<elements>.post.comments.<elements>)
+                         - EntityAttributeFetchImpl(entity=com.model.User, querySpaceUid=<gen:6>, path=com.model.User.likes.<elements>.post.comments.<elements>.commentWriter)
+                            - CollectionAttributeFetchImpl(collection=com.model.User.posts, querySpaceUid=<gen:7>, path=com.model.User.likes.<elements>.post.comments.<elements>.commentWriter.posts)
+                               - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Post, querySpaceUid=<gen:8>, path=com.model.User.likes.<elements>.post.comments.<elements>.commentWriter.posts.<elements>)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.model.User)
+          - SQL table alias mapping - user0_
+          - alias suffix - 0_
+          - suffixed key columns - {user_id1_3_0_}
+          - JOIN (JoinDefinedByMetadata(likes)) : <gen:0> -> <gen:1>
+             - CollectionQuerySpaceImpl(uid=<gen:1>, collection=com.model.User.likes)
+                - SQL table alias mapping - likes1_
+                - alias suffix - 1_
+                - suffixed key columns - {user_fk3_1_1_}
+                - entity-element alias suffix - 2_
+                - 2_entity-element suffixed key columns - like_id1_1_2_
+                - JOIN (JoinDefinedByMetadata(elements)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.model.Like)
+                      - SQL table alias mapping - likes1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {like_id1_1_2_}
+                      - JOIN (JoinDefinedByMetadata(post)) : <gen:2> -> <gen:3>
+                         - EntityQuerySpaceImpl(uid=<gen:3>, entity=com.model.Post)
+                            - SQL table alias mapping - post2_
+                            - alias suffix - 3_
+                            - suffixed key columns - {post_id1_2_3_}
+                            - JOIN (JoinDefinedByMetadata(comments)) : <gen:3> -> <gen:4>
+                               - CollectionQuerySpaceImpl(uid=<gen:4>, collection=com.model.Post.comments)
+                                  - SQL table alias mapping - comments3_
+                                  - alias suffix - 4_
+                                  - suffixed key columns - {post_id4_0_4_}
+                                  - entity-element alias suffix - 5_
+                                  - 5_entity-element suffixed key columns - comment_1_0_5_
+                                  - JOIN (JoinDefinedByMetadata(elements)) : <gen:4> -> <gen:5>
+                                     - EntityQuerySpaceImpl(uid=<gen:5>, entity=com.model.Comment)
+                                        - SQL table alias mapping - comments3_
+                                        - alias suffix - 5_
+                                        - suffixed key columns - {comment_1_0_5_}
+                                        - JOIN (JoinDefinedByMetadata(commentWriter)) : <gen:5> -> <gen:6>
+                                           - EntityQuerySpaceImpl(uid=<gen:6>, entity=com.model.User)
+                                              - SQL table alias mapping - user4_
+                                              - alias suffix - 6_
+                                              - suffixed key columns - {user_id1_3_6_}
+                                              - JOIN (JoinDefinedByMetadata(posts)) : <gen:6> -> <gen:7>
+                                                 - CollectionQuerySpaceImpl(uid=<gen:7>, collection=com.model.User.posts)
+                                                    - SQL table alias mapping - posts5_
+                                                    - alias suffix - 7_
+                                                    - suffixed key columns - {creator_7_2_7_}
+                                                    - entity-element alias suffix - 8_
+                                                    - 8_entity-element suffixed key columns - post_id1_2_8_
+                                                    - JOIN (JoinDefinedByMetadata(elements)) : <gen:7> -> <gen:8>
+                                                       - EntityQuerySpaceImpl(uid=<gen:8>, entity=com.model.Post)
+                                                          - SQL table alias mapping - posts5_
+                                                          - alias suffix - 8_
+                                                          - suffixed key columns - {post_id1_2_8_}
+
+2021-04-18 19:12:55 DEBUG EntityLoader:129 - Static select for entity com.model.User [NONE]: select user0_.user_id as user_id1_3_0_, user0_.user_description as user_des2_3_0_, user0_.email_address as email_ad3_3_0_, user0_.user_first_name as user_fir4_3_0_, user0_.user_last_name as user_las5_3_0_, user0_.pass_word as pass_wor6_3_0_, user0_.profile_picture as profile_7_3_0_, user0_.user_name as user_nam8_3_0_, likes1_.user_FK as user_fk3_1_1_, likes1_.like_id as like_id1_1_1_, likes1_.like_id as like_id1_1_2_, likes1_.post_FK as post_fk2_1_2_, likes1_.user_FK as user_fk3_1_2_, post2_.post_id as post_id1_2_3_, post2_.creator_user_id as creator_7_2_3_, post2_.post_content as post_con2_2_3_, post2_.post_image_link as post_ima3_2_3_, post2_.post_title as post_tit4_2_3_, post2_.posted_at as posted_a5_2_3_, post2_.youtube_link as youtube_6_2_3_, comments3_.post_id as post_id4_0_4_, comments3_.comment_id as comment_1_0_4_, comments3_.comment_id as comment_1_0_5_, comments3_.comment_content as comment_2_0_5_, comments3_.post_id as post_id4_0_5_, comments3_.user_id as user_id5_0_5_, comments3_.commented_at as commente3_0_5_, user4_.user_id as user_id1_3_6_, user4_.user_description as user_des2_3_6_, user4_.email_address as email_ad3_3_6_, user4_.user_first_name as user_fir4_3_6_, user4_.user_last_name as user_las5_3_6_, user4_.pass_word as pass_wor6_3_6_, user4_.profile_picture as profile_7_3_6_, user4_.user_name as user_nam8_3_6_, posts5_.creator_user_id as creator_7_2_7_, posts5_.post_id as post_id1_2_7_, posts5_.post_id as post_id1_2_8_, posts5_.creator_user_id as creator_7_2_8_, posts5_.post_content as post_con2_2_8_, posts5_.post_image_link as post_ima3_2_8_, posts5_.post_title as post_tit4_2_8_, posts5_.posted_at as posted_a5_2_8_, posts5_.youtube_link as youtube_6_2_8_ from users user0_ left outer join likes likes1_ on user0_.user_id=likes1_.user_FK left outer join posts post2_ on likes1_.post_FK=post2_.post_id left outer join comments comments3_ on post2_.post_id=comments3_.post_id left outer join users user4_ on comments3_.user_id=user4_.user_id left outer join posts posts5_ on user4_.user_id=posts5_.creator_user_id where user0_.user_id=?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:3918 - Static SQL for entity: com.model.Like
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:3923 -  Version select: select like_id from likes where like_id =?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:3926 -  Snapshot select: select like_.like_id, like_.post_FK as post_fk2_1_, like_.user_FK as user_fk3_1_ from likes like_ where like_.like_id=?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:394 -  Insert 0: insert into likes (post_FK, user_FK, like_id) values (?, ?, ?)
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:394 -  Update 0: update likes set post_FK=?, user_FK=? where like_id=?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:394 -  Delete 0: delete from likes where like_id=?
+2021-04-18 19:12:55 DEBUG AbstractEntityPersister:3934 -  Identity insert: insert into likes (post_FK, user_FK) values (?, ?)
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@159d289f]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5126ef91]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@510fc0a0]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5cfb0188]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentContent
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentPost
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : post.comments.commentPost
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6ed13631]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.description
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.emailAddress
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.firstName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.lastName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.likes
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@6959d7a8]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:6> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@f6811f0]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.likes.post
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : post.comments.commentWriter.likes.post
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.likes.user
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : post.comments.commentWriter.likes.user
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.password
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.posts
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:7> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@3199e4c4]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:8> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7e318496]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.posts.comments
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : post.comments.commentWriter.posts.comments
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.posts.creator
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : post.comments.commentWriter.posts.creator
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.posts.postContent
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.posts.postImageUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.posts.postTitle
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.posts.postedAt
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.posts.usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : post.comments.commentWriter.posts.usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.posts.youtubeUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.profilePic
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentWriter.username
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments.commentedAt
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.creator
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : post.creator
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.postContent
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.postImageUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.postTitle
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.postedAt
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : post.usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.youtubeUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : user
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : user
+2021-04-18 19:12:55 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:160 - Building LoadPlan...
+2021-04-18 19:12:55 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2021-04-18 19:12:55 DEBUG LoadPlanTreePrinter:55 - LoadPlan(entity=com.model.Like)
+    - Returns
+       - EntityReturnImpl(entity=com.model.Like, querySpaceUid=<gen:0>, path=com.model.Like)
+          - EntityAttributeFetchImpl(entity=com.model.Post, querySpaceUid=<gen:1>, path=com.model.Like.post)
+             - CollectionAttributeFetchImpl(collection=com.model.Post.comments, querySpaceUid=<gen:2>, path=com.model.Like.post.comments)
+                - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Comment, querySpaceUid=<gen:3>, path=com.model.Like.post.comments.<elements>)
+                   - EntityAttributeFetchImpl(entity=com.model.User, querySpaceUid=<gen:4>, path=com.model.Like.post.comments.<elements>.commentWriter)
+                      - CollectionAttributeFetchImpl(collection=com.model.User.likes, querySpaceUid=<gen:5>, path=com.model.Like.post.comments.<elements>.commentWriter.likes)
+                         - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Like, querySpaceUid=<gen:6>, path=com.model.Like.post.comments.<elements>.commentWriter.likes.<elements>)
+                      - CollectionAttributeFetchImpl(collection=com.model.User.posts, querySpaceUid=<gen:7>, path=com.model.Like.post.comments.<elements>.commentWriter.posts)
+                         - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Post, querySpaceUid=<gen:8>, path=com.model.Like.post.comments.<elements>.commentWriter.posts.<elements>)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.model.Like)
+          - SQL table alias mapping - like0_
+          - alias suffix - 0_
+          - suffixed key columns - {like_id1_1_0_}
+          - JOIN (JoinDefinedByMetadata(post)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.model.Post)
+                - SQL table alias mapping - post1_
+                - alias suffix - 1_
+                - suffixed key columns - {post_id1_2_1_}
+                - JOIN (JoinDefinedByMetadata(comments)) : <gen:1> -> <gen:2>
+                   - CollectionQuerySpaceImpl(uid=<gen:2>, collection=com.model.Post.comments)
+                      - SQL table alias mapping - comments2_
+                      - alias suffix - 2_
+                      - suffixed key columns - {post_id4_0_2_}
+                      - entity-element alias suffix - 3_
+                      - 3_entity-element suffixed key columns - comment_1_0_3_
+                      - JOIN (JoinDefinedByMetadata(elements)) : <gen:2> -> <gen:3>
+                         - EntityQuerySpaceImpl(uid=<gen:3>, entity=com.model.Comment)
+                            - SQL table alias mapping - comments2_
+                            - alias suffix - 3_
+                            - suffixed key columns - {comment_1_0_3_}
+                            - JOIN (JoinDefinedByMetadata(commentWriter)) : <gen:3> -> <gen:4>
+                               - EntityQuerySpaceImpl(uid=<gen:4>, entity=com.model.User)
+                                  - SQL table alias mapping - user3_
+                                  - alias suffix - 4_
+                                  - suffixed key columns - {user_id1_3_4_}
+                                  - JOIN (JoinDefinedByMetadata(likes)) : <gen:4> -> <gen:5>
+                                     - CollectionQuerySpaceImpl(uid=<gen:5>, collection=com.model.User.likes)
+                                        - SQL table alias mapping - likes4_
+                                        - alias suffix - 5_
+                                        - suffixed key columns - {user_fk3_1_5_}
+                                        - entity-element alias suffix - 6_
+                                        - 6_entity-element suffixed key columns - like_id1_1_6_
+                                        - JOIN (JoinDefinedByMetadata(elements)) : <gen:5> -> <gen:6>
+                                           - EntityQuerySpaceImpl(uid=<gen:6>, entity=com.model.Like)
+                                              - SQL table alias mapping - likes4_
+                                              - alias suffix - 6_
+                                              - suffixed key columns - {like_id1_1_6_}
+                                  - JOIN (JoinDefinedByMetadata(posts)) : <gen:4> -> <gen:7>
+                                     - CollectionQuerySpaceImpl(uid=<gen:7>, collection=com.model.User.posts)
+                                        - SQL table alias mapping - posts5_
+                                        - alias suffix - 7_
+                                        - suffixed key columns - {creator_7_2_7_}
+                                        - entity-element alias suffix - 8_
+                                        - 8_entity-element suffixed key columns - post_id1_2_8_
+                                        - JOIN (JoinDefinedByMetadata(elements)) : <gen:7> -> <gen:8>
+                                           - EntityQuerySpaceImpl(uid=<gen:8>, entity=com.model.Post)
+                                              - SQL table alias mapping - posts5_
+                                              - alias suffix - 8_
+                                              - suffixed key columns - {post_id1_2_8_}
+
+2021-04-18 19:12:55 DEBUG EntityLoader:129 - Static select for entity com.model.Like [NONE]: select like0_.like_id as like_id1_1_0_, like0_.post_FK as post_fk2_1_0_, like0_.user_FK as user_fk3_1_0_, post1_.post_id as post_id1_2_1_, post1_.creator_user_id as creator_7_2_1_, post1_.post_content as post_con2_2_1_, post1_.post_image_link as post_ima3_2_1_, post1_.post_title as post_tit4_2_1_, post1_.posted_at as posted_a5_2_1_, post1_.youtube_link as youtube_6_2_1_, comments2_.post_id as post_id4_0_2_, comments2_.comment_id as comment_1_0_2_, comments2_.comment_id as comment_1_0_3_, comments2_.comment_content as comment_2_0_3_, comments2_.post_id as post_id4_0_3_, comments2_.user_id as user_id5_0_3_, comments2_.commented_at as commente3_0_3_, user3_.user_id as user_id1_3_4_, user3_.user_description as user_des2_3_4_, user3_.email_address as email_ad3_3_4_, user3_.user_first_name as user_fir4_3_4_, user3_.user_last_name as user_las5_3_4_, user3_.pass_word as pass_wor6_3_4_, user3_.profile_picture as profile_7_3_4_, user3_.user_name as user_nam8_3_4_, likes4_.user_FK as user_fk3_1_5_, likes4_.like_id as like_id1_1_5_, likes4_.like_id as like_id1_1_6_, likes4_.post_FK as post_fk2_1_6_, likes4_.user_FK as user_fk3_1_6_, posts5_.creator_user_id as creator_7_2_7_, posts5_.post_id as post_id1_2_7_, posts5_.post_id as post_id1_2_8_, posts5_.creator_user_id as creator_7_2_8_, posts5_.post_content as post_con2_2_8_, posts5_.post_image_link as post_ima3_2_8_, posts5_.post_title as post_tit4_2_8_, posts5_.posted_at as posted_a5_2_8_, posts5_.youtube_link as youtube_6_2_8_ from likes like0_ left outer join posts post1_ on like0_.post_FK=post1_.post_id left outer join comments comments2_ on post1_.post_id=comments2_.post_id left outer join users user3_ on comments2_.user_id=user3_.user_id left outer join likes likes4_ on user3_.user_id=likes4_.user_FK left outer join posts posts5_ on user3_.user_id=posts5_.creator_user_id where like0_.like_id=?
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@3e527600]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@d30fd04]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : comments
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@5bd82b33]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@518a3591]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : creator
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : creator
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : postContent
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : postImageUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : postTitle
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : postedAt
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : usersWhoLiked
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@6a358b1d]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@21e594c5]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : youtubeUrl
+2021-04-18 19:12:55 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:160 - Building LoadPlan...
+2021-04-18 19:12:55 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2021-04-18 19:12:55 DEBUG LoadPlanTreePrinter:55 - LoadPlan(collection=com.model.User.posts)
+    - Returns
+       - CollectionReturnImpl(collection=com.model.User.posts, querySpaceUid=<gen:0>, path=[com.model.User.posts])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Post, querySpaceUid=<gen:1>, path=[com.model.User.posts].<elements>)
+             - CollectionAttributeFetchImpl(collection=com.model.Post.comments, querySpaceUid=<gen:2>, path=[com.model.User.posts].<elements>.comments)
+                - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Comment, querySpaceUid=<gen:3>, path=[com.model.User.posts].<elements>.comments.<elements>)
+             - CollectionAttributeFetchImpl(collection=com.model.Post.usersWhoLiked, querySpaceUid=<gen:4>, path=[com.model.User.posts].<elements>.usersWhoLiked)
+                - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Like, querySpaceUid=<gen:5>, path=[com.model.User.posts].<elements>.usersWhoLiked.<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.model.User.posts)
+          - SQL table alias mapping - posts0_
+          - alias suffix - 0_
+          - suffixed key columns - {creator_7_2_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - post_id1_2_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.model.Post)
+                - SQL table alias mapping - posts0_
+                - alias suffix - 1_
+                - suffixed key columns - {post_id1_2_1_}
+
+2021-04-18 19:12:55 DEBUG CollectionLoader:83 - Static select for collection com.model.User.posts: select posts0_.creator_user_id as creator_7_2_0_, posts0_.post_id as post_id1_2_0_, posts0_.post_id as post_id1_2_1_, posts0_.creator_user_id as creator_7_2_1_, posts0_.post_content as post_con2_2_1_, posts0_.post_image_link as post_ima3_2_1_, posts0_.post_title as post_tit4_2_1_, posts0_.posted_at as posted_a5_2_1_, posts0_.youtube_link as youtube_6_2_1_ from posts posts0_ where posts0_.creator_user_id=?
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@20638312]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3eff9261]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : post
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : user
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@620bd342]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : user.description
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : user.emailAddress
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : user.firstName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : user.lastName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : user.likes
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : user.likes
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : user.password
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : user.posts
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@4c85622]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3f3bfec1]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : user.profilePic
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : user.username
+2021-04-18 19:12:55 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:160 - Building LoadPlan...
+2021-04-18 19:12:55 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2021-04-18 19:12:55 DEBUG LoadPlanTreePrinter:55 - LoadPlan(collection=com.model.Post.usersWhoLiked)
+    - Returns
+       - CollectionReturnImpl(collection=com.model.Post.usersWhoLiked, querySpaceUid=<gen:0>, path=[com.model.Post.usersWhoLiked])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Like, querySpaceUid=<gen:1>, path=[com.model.Post.usersWhoLiked].<elements>)
+             - EntityAttributeFetchImpl(entity=com.model.User, querySpaceUid=<gen:2>, path=[com.model.Post.usersWhoLiked].<elements>.user)
+                - CollectionAttributeFetchImpl(collection=com.model.User.posts, querySpaceUid=<gen:3>, path=[com.model.Post.usersWhoLiked].<elements>.user.posts)
+                   - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Post, querySpaceUid=<gen:4>, path=[com.model.Post.usersWhoLiked].<elements>.user.posts.<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.model.Post.usersWhoLiked)
+          - SQL table alias mapping - userswholi0_
+          - alias suffix - 0_
+          - suffixed key columns - {post_fk2_1_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - like_id1_1_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.model.Like)
+                - SQL table alias mapping - userswholi0_
+                - alias suffix - 1_
+                - suffixed key columns - {like_id1_1_1_}
+                - JOIN (JoinDefinedByMetadata(user)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.model.User)
+                      - SQL table alias mapping - user1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {user_id1_3_2_}
+
+2021-04-18 19:12:55 DEBUG CollectionLoader:83 - Static select for collection com.model.Post.usersWhoLiked: select userswholi0_.post_FK as post_fk2_1_0_, userswholi0_.like_id as like_id1_1_0_, userswholi0_.like_id as like_id1_1_1_, userswholi0_.post_FK as post_fk2_1_1_, userswholi0_.user_FK as user_fk3_1_1_, user1_.user_id as user_id1_3_2_, user1_.user_description as user_des2_3_2_, user1_.email_address as email_ad3_3_2_, user1_.user_first_name as user_fir4_3_2_, user1_.user_last_name as user_las5_3_2_, user1_.pass_word as pass_wor6_3_2_, user1_.profile_picture as profile_7_3_2_, user1_.user_name as user_nam8_3_2_ from likes userswholi0_ left outer join users user1_ on userswholi0_.user_FK=user1_.user_id where userswholi0_.post_FK=?
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@316aba7]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@a7528c4]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentContent
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentPost
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : commentPost
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1a9af9e8]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.description
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.emailAddress
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.firstName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.lastName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.likes
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@256b4dde]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@30bb2807]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.password
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.posts
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@7da3c241]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:6> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@124da5eb]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.profilePic
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentWriter.username
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : commentedAt
+2021-04-18 19:12:55 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:160 - Building LoadPlan...
+2021-04-18 19:12:55 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2021-04-18 19:12:55 DEBUG LoadPlanTreePrinter:55 - LoadPlan(collection=com.model.Post.comments)
+    - Returns
+       - CollectionReturnImpl(collection=com.model.Post.comments, querySpaceUid=<gen:0>, path=[com.model.Post.comments])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Comment, querySpaceUid=<gen:1>, path=[com.model.Post.comments].<elements>)
+             - EntityAttributeFetchImpl(entity=com.model.User, querySpaceUid=<gen:2>, path=[com.model.Post.comments].<elements>.commentWriter)
+                - CollectionAttributeFetchImpl(collection=com.model.User.likes, querySpaceUid=<gen:3>, path=[com.model.Post.comments].<elements>.commentWriter.likes)
+                   - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Like, querySpaceUid=<gen:4>, path=[com.model.Post.comments].<elements>.commentWriter.likes.<elements>)
+                - CollectionAttributeFetchImpl(collection=com.model.User.posts, querySpaceUid=<gen:5>, path=[com.model.Post.comments].<elements>.commentWriter.posts)
+                   - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Post, querySpaceUid=<gen:6>, path=[com.model.Post.comments].<elements>.commentWriter.posts.<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.model.Post.comments)
+          - SQL table alias mapping - comments0_
+          - alias suffix - 0_
+          - suffixed key columns - {post_id4_0_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - comment_1_0_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.model.Comment)
+                - SQL table alias mapping - comments0_
+                - alias suffix - 1_
+                - suffixed key columns - {comment_1_0_1_}
+                - JOIN (JoinDefinedByMetadata(commentWriter)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.model.User)
+                      - SQL table alias mapping - user1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {user_id1_3_2_}
+
+2021-04-18 19:12:55 DEBUG CollectionLoader:83 - Static select for collection com.model.Post.comments: select comments0_.post_id as post_id4_0_0_, comments0_.comment_id as comment_1_0_0_, comments0_.comment_id as comment_1_0_1_, comments0_.comment_content as comment_2_0_1_, comments0_.post_id as post_id4_0_1_, comments0_.user_id as user_id5_0_1_, comments0_.commented_at as commente3_0_1_, user1_.user_id as user_id1_3_2_, user1_.user_description as user_des2_3_2_, user1_.email_address as email_ad3_3_2_, user1_.user_first_name as user_fir4_3_2_, user1_.user_last_name as user_las5_3_2_, user1_.pass_word as pass_wor6_3_2_, user1_.profile_picture as profile_7_3_2_, user1_.user_name as user_nam8_3_2_ from comments comments0_ left outer join users user1_ on comments0_.user_id=user1_.user_id where comments0_.post_id=?
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@6db70fc1]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4a5e960]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4df6cc5c]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.comments
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@3d8cc0b8]
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@752218b7]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.creator
+2021-04-18 19:12:55 DEBUG QuerySpacesImpl:174 - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@ecdae63]
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.creator.description
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.creator.emailAddress
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.creator.firstName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.creator.lastName
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.creator.likes
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : post.creator.likes
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.creator.password
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.creator.posts
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : post.creator.posts
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.creator.profilePic
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.creator.username
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.postContent
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.postImageUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.postTitle
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.postedAt
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : post.usersWhoLiked
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : post.youtubeUrl
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:146 - Visiting attribute path : user
+2021-04-18 19:12:55 DEBUG MetamodelGraphWalker:154 - Property path deemed to be circular : user
+2021-04-18 19:12:55 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:160 - Building LoadPlan...
+2021-04-18 19:12:55 DEBUG LoadQueryJoinAndFetchProcessor:102 - processing queryspace <gen:0>
+2021-04-18 19:12:55 DEBUG LoadPlanTreePrinter:55 - LoadPlan(collection=com.model.User.likes)
+    - Returns
+       - CollectionReturnImpl(collection=com.model.User.likes, querySpaceUid=<gen:0>, path=[com.model.User.likes])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Like, querySpaceUid=<gen:1>, path=[com.model.User.likes].<elements>)
+             - EntityAttributeFetchImpl(entity=com.model.Post, querySpaceUid=<gen:2>, path=[com.model.User.likes].<elements>.post)
+                - CollectionAttributeFetchImpl(collection=com.model.Post.comments, querySpaceUid=<gen:3>, path=[com.model.User.likes].<elements>.post.comments)
+                   - (collection element) CollectionFetchableElementEntityGraph(entity=com.model.Comment, querySpaceUid=<gen:4>, path=[com.model.User.likes].<elements>.post.comments.<elements>)
+                - EntityAttributeFetchImpl(entity=com.model.User, querySpaceUid=<gen:5>, path=[com.model.User.likes].<elements>.post.creator)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.model.User.likes)
+          - SQL table alias mapping - likes0_
+          - alias suffix - 0_
+          - suffixed key columns - {user_fk3_1_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - like_id1_1_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.model.Like)
+                - SQL table alias mapping - likes0_
+                - alias suffix - 1_
+                - suffixed key columns - {like_id1_1_1_}
+                - JOIN (JoinDefinedByMetadata(post)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.model.Post)
+                      - SQL table alias mapping - post1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {post_id1_2_2_}
+                      - JOIN (JoinDefinedByMetadata(creator)) : <gen:2> -> <gen:5>
+                         - EntityQuerySpaceImpl(uid=<gen:5>, entity=com.model.User)
+                            - SQL table alias mapping - user2_
+                            - alias suffix - 3_
+                            - suffixed key columns - {user_id1_3_3_}
+
+2021-04-18 19:12:55 DEBUG CollectionLoader:83 - Static select for collection com.model.User.likes: select likes0_.user_FK as user_fk3_1_0_, likes0_.like_id as like_id1_1_0_, likes0_.like_id as like_id1_1_1_, likes0_.post_FK as post_fk2_1_1_, likes0_.user_FK as user_fk3_1_1_, post1_.post_id as post_id1_2_2_, post1_.creator_user_id as creator_7_2_2_, post1_.post_content as post_con2_2_2_, post1_.post_image_link as post_ima3_2_2_, post1_.post_title as post_tit4_2_2_, post1_.posted_at as posted_a5_2_2_, post1_.youtube_link as youtube_6_2_2_, user2_.user_id as user_id1_3_3_, user2_.user_description as user_des2_3_3_, user2_.email_address as email_ad3_3_3_, user2_.user_first_name as user_fir4_3_3_, user2_.user_last_name as user_las5_3_3_, user2_.pass_word as pass_wor6_3_3_, user2_.profile_picture as profile_7_3_3_, user2_.user_name as user_nam8_3_3_ from likes likes0_ left outer join posts post1_ on likes0_.post_FK=post1_.post_id left outer join users user2_ on post1_.creator_user_id=user2_.user_id where likes0_.user_FK=?
+2021-04-18 19:12:56 DEBUG Table:520 - No alter strings for table : comments
+2021-04-18 19:12:56 DEBUG Table:520 - No alter strings for table : likes
+2021-04-18 19:12:56 DEBUG Table:520 - No alter strings for table : posts
+2021-04-18 19:12:56 DEBUG Table:520 - No alter strings for table : users
+2021-04-18 19:12:57 DEBUG JtaPlatformInitiator:43 - No JtaPlatform was specified, checking resolver
+2021-04-18 19:12:57 DEBUG JtaPlatformResolverInitiator:33 - No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+2021-04-18 19:12:57 DEBUG StandardJtaPlatformResolver:137 - Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-18 19:12:57 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-18 19:12:57 DEBUG NamedQueryRepository:153 - Checking 0 named HQL queries
+2021-04-18 19:12:57 DEBUG NamedQueryRepository:167 - Checking 0 named SQL queries
+2021-04-18 19:12:57 DEBUG SessionFactoryRegistry:51 - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@5b63d15f
+2021-04-18 19:12:57 DEBUG SessionFactoryRegistry:73 - Registering SessionFactory: ebc16cd5-f2c1-4110-a3e8-967a4fe38eb2 (<unnamed>)
+2021-04-18 19:12:57 DEBUG SessionFactoryRegistry:80 - Not binding SessionFactory to JNDI, no JNDI name configured
+2021-04-18 19:12:59 DEBUG ResourceBundleMessageInterpolator:220 - Failed to load expression factory via classloader sun.misc.Launcher$AppClassLoader@73d16e93
+java.lang.NoClassDefFoundError: javax/el/ExpressionFactory
+	at org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator.canLoadExpressionFactory(ResourceBundleMessageInterpolator.java:216)
+	at org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator.buildExpressionFactory(ResourceBundleMessageInterpolator.java:170)
+	at org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator.<init>(ResourceBundleMessageInterpolator.java:94)
+	at org.hibernate.validator.internal.engine.AbstractConfigurationImpl.getDefaultMessageInterpolator(AbstractConfigurationImpl.java:573)
+	at org.springframework.validation.beanvalidation.LocalValidatorFactoryBean.afterPropertiesSet(LocalValidatorFactoryBean.java:275)
+	at org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean.afterPropertiesSet(OptionalValidatorFactoryBean.java:40)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:129)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:61)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:275)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:243)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1384)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:743)
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:742)
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
+	at java.util.Optional.orElseGet(Optional.java:267)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:133)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.lang.Thread.run(Thread.java:748)
+2021-04-18 19:12:59 DEBUG ResourceBundleMessageInterpolator:220 - Failed to load expression factory via classloader sun.misc.Launcher$AppClassLoader@73d16e93
+java.lang.NoClassDefFoundError: javax/el/ExpressionFactory
+	at org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator.canLoadExpressionFactory(ResourceBundleMessageInterpolator.java:216)
+	at org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator.buildExpressionFactory(ResourceBundleMessageInterpolator.java:183)
+	at org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator.<init>(ResourceBundleMessageInterpolator.java:94)
+	at org.hibernate.validator.internal.engine.AbstractConfigurationImpl.getDefaultMessageInterpolator(AbstractConfigurationImpl.java:573)
+	at org.springframework.validation.beanvalidation.LocalValidatorFactoryBean.afterPropertiesSet(LocalValidatorFactoryBean.java:275)
+	at org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean.afterPropertiesSet(OptionalValidatorFactoryBean.java:40)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:129)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:61)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:275)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:243)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1384)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:743)
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:742)
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
+	at java.util.Optional.orElseGet(Optional.java:267)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:133)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.lang.Thread.run(Thread.java:748)
+2021-04-18 19:13:00 INFO  UserController:30 - Retrieving all Likes from the Service layer/database
+2021-04-18 19:13:01 INFO  UserController:92 - Updating a Like in the database
+2021-04-18 19:13:01 INFO  UserController:67 - Retrieving all Likes from the Service layer/in the database created by the user with id: 0
+2021-04-18 19:13:01 INFO  UserController:42 - Retrieving all Likes from the Service layer/database that are connected to the post with id: 2
+2021-04-18 19:13:01 INFO  UserController:79 - Inserting a new Like into the database
+2021-04-18 19:13:01 INFO  UserController:55 - Retrieving the number of Likes from the Service layer/in the database connected to the post with id: 2
+2021-04-18 19:13:01 INFO  UserController:105 - Deleting a Like in the database with id: 2
+2021-04-18 19:13:01 INFO  UserController:40 - Retrieved post from the Service layer/database with the id: 1
+2021-04-18 19:13:01 INFO  UserController:40 - Retrieved post from the Service layer/database with the id: 2
+2021-04-18 19:13:01 INFO  UserController:63 - Retrieved all posts from the Service layer/database liked by the User with id: 1
+2021-04-18 19:13:01 INFO  UserController:29 - Retrieved all posts from the Service layer/database
+2021-04-18 19:13:01 INFO  UserController:86 - Updated a post already within the database
+2021-04-18 19:13:01 INFO  UserController:75 - Inserted a new post to the database.
+2021-04-18 19:13:01 INFO  UserController:52 - Retrieved all posts from the Service layer/database created by the User with id: 1
+2021-04-18 19:13:01 INFO  UserController:97 - Deleted a post with id: 3 from the database.
+2021-04-18 19:13:01 INFO  UserController:52 - An attempt to retrieve a user with username: rafael.
+2021-04-18 19:13:01 INFO  UserController:138 - The successful logout of the session:Mock for HttpSession, hashCode: 373767839
+2021-04-18 19:13:01 INFO  UserController:46 - An attempt to retrieve a user with username: rafael with a password.
+2021-04-18 19:13:01 INFO  UserController:52 - An attempt to retrieve a user with username: rafael.
+2021-04-18 19:13:01 INFO  UserController:78 - The failed creation of a user with username: rafael.
+2021-04-18 19:13:01 INFO  UserController:34 - All Users was retrieved from serviceLayer
+2021-04-18 19:13:01 INFO  UserController:91 - The successful update of a user with username: dani3.
+2021-04-18 19:13:01 INFO  UserController:40 - A user with id: 2 was retrieved.
+2021-04-18 19:13:01 INFO  UserController:88 - The successful update(with password) of a user with username: dani3.
+2021-04-18 19:13:01 INFO  UserController:40 - A user with id: 2 was retrieved.
+2021-04-18 19:13:01 INFO  UserController:132 - The successful login of the user:rafael
+2021-04-18 19:13:01 INFO  UserController:132 - The successful login of the user:rafael
+2021-04-18 19:13:01 INFO  UserController:52 - An attempt to retrieve a user with username: jorge.
+2021-04-18 19:13:01 INFO  UserController:74 - The successful creation of a user with username: jorge.
+2021-04-18 19:13:01 INFO  UserController:121 - The failed retrieval of the loggedInUser
+2021-04-18 19:13:01 INFO  UserController:99 - The failed update of a user with username: dani3.
+2021-04-18 19:13:01 INFO  UserController:117 - The successful retrieval of the loggedInUser
+2021-04-18 19:13:01 INFO  UserController:106 - The deletion of a user with username: dani3.
+2021-04-18 19:13:01 INFO  UserController:40 - A user with id: 1 was retrieved.
+2021-04-18 19:13:02 DEBUG SessionFactoryImpl:792 - HHH000031: Closing
+2021-04-18 19:13:02 DEBUG TypeConfiguration$Scope:350 - Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@5e140388] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@1e113279]
+2021-04-18 19:13:02 DEBUG AbstractServiceRegistryImpl:419 - Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
+2021-04-18 19:13:02 DEBUG BootstrapServiceRegistryImpl:295 - Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries

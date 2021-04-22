@@ -1,0 +1,45 @@
+<br><br><br><h2>Welcome to Link Social Network (LSN)</h2>
+<div class="container " id="container2">
+	<div class="form-container sign-up-container">
+		<form [formGroup]="registrationForm"   (ngSubmit)= "onRegistrationSubmit()">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				
+			</div>
+			<span>Use your email for registration</span>
+			<input type="text" placeholder="User Name" formControlName="userName"/>
+			<input type="email" placeholder="Email" formControlName="email"/>
+			<input type="password" placeholder="Password" formControlName="password"/>
+			<button > Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+			<h1>Sign in</h1>
+			<div class="social-container">
+				
+			</div>
+			<span>Use your User Name to login</span>
+			<input id="loginusername" type="text" placeholder="User Name" formControlName="userName" required/>
+			
+			<input id="loginpassword" type="password" placeholder="Password" formControlName="password"  required/>
+			<a routerLink="#" (click)="onPasswordReset()">Forgot your password?</a>
+			
+			<button class="button" type="submit">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+                <h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signIn" (click)="openLogin()">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info <br> OR Sign UP </p>
+				<button class="ghost" id="signUp" (click)="openRegistration()">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
