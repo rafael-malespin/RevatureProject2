@@ -75,6 +75,20 @@ Current Features
   - Run the command "ng serve -o" in the terminal and wait for the Client-Side server to start which should open the Client side website in the default browser.
 
 ## Usage
+  1. On the login page (at localhost:9001 or the "ip address":"port number" if it was deployed or the port was changed in all endpoints), the User can click the button "Sign Up" which will cause a menu to appear where the User may enter a username, an email, and a password. Once it is submitted (and the username is available and an email was inputted), the User will be moved back to the login menu which will have their username and password already filled in.
+  2. Once the user logs in, they will be sent to a home page where they can submit posts(that can have text messages, images, and/or videos)
+    - All posts require that the User includes some kind of text in the Post tab of the new Post form before the "Post" button will successfully submit a new Post
+    - If the User wants to include an image, they will select the "Image" tab and click "Browse" then navigate to the image they want to upload and select it. If they include a text message in the Post Tab, they can press the "Post" button to submit the new Post.
+    - If the User wants to include a video, they will select the "Video" tab and enter the video's id in YouTube into the input video. If they include a text message in the Post Tab, they can press the "Post" button to submit the new Post with a video.
+  3. Below the Form for New Posts, all previous posts can be viewed as the User scrolls down/up
+  4. If the User wishes to Like a post they see, they can press the button "Like" to give a Post a Like and press it again to remove the Like.
+  5. If a User wishes to Comment on a post, they can enter text in the field marked "Write a comment..." and then click on the Smiling Face Button to submit the Comment.
+  6. At the top of the page is a navigation bar that can direct the User to different pages
+    - By clicking "Home" the user will be directed to the home page where they can see all the posts.
+    - By clicking "Profile" the user will be directed to their Profile page where they can see the posts they submitted and if they go to the "Profile Setting" tab, they can edit their profile information (Adding first and last name, uploading a profile picture, adding a description/About Me section, and updating their password if they select "User Password" and enter the new password twice and their old password).
+    - By clicking "Chat Room"
+  8. By C
+    
 
 ## Contributors
  - Michael Loutfi
