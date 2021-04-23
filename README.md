@@ -32,8 +32,6 @@ Current Features
 - Sucessfully deploy project on EC2
 - Implement Notifications of Likes and Comments
 - Implement Follower features
-- Fix bug in chat room: if a user logs out or closes the window while in chat room, they will appear as being online
-- Fix bug where dropdown with links to edit profile and logout occasionally displays "null null" instead of the user's name
 
 ## Getting Started
 - First, you need to clone the project
@@ -50,9 +48,10 @@ Current Features
   5. create a variable "EMAILING_ADDRESS" and set its value to be the address of an email that is set up to be used for sending emails to others
   6. create a variable "EMAILING_PASSWORD" and set its value to be the password for the previous email
   7. create a variable "AWS_BUCKET" and set its value to be name of the bucket in S3 that is set up to contain images
-  8. create a variable "AWS_ID" whose value will be the Access Key for the S3 Bucket
-  9. create a variable "AWS_KEY" whose value will be the Secret Access Key for the S3 Bucket
-  10. create a variable "AWS_REGION" and set it to be the region where the S3 bucket will be hosted
+  8. create a variable "AWS_BUCKET_URL" and set its value to be the url of the S3 bucket (the url where images are stored and can be accessed from)
+  9. create a variable "AWS_ID" whose value will be the Access Key for the S3 Bucket
+  10. create a variable "AWS_KEY" whose value will be the Secret Access Key for the S3 Bucket
+  11. create a variable "AWS_REGION" and set it to be the region where the S3 bucket will be hosted
 - Fourth, you will need to open the project in an IDE (preferably IntelliJ 2020.3 or above)
   - Open IntelliJ
   - Click File -> Open
