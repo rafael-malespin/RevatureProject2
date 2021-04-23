@@ -143,7 +143,7 @@ export class TimeLineComponent implements OnInit,OnDestroy {
       this.imageServ.postImageUpload(file).subscribe(
         data=>{
           
-          post.postImageUrl="https://rev-training-p2-bucket.s3.us-east-2.amazonaws.com/"+data.message;
+          post.postImageUrl=data.message;
           
           let response =  this.postservice.insertNewPost(post).subscribe(
             data =>{

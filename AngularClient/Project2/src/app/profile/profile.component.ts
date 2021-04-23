@@ -209,7 +209,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
           data=>{
             console.log("We got the url:"+data.message);
             console.log(data.message);
-            user.profilePic="https://rev-training-p2-bucket.s3.us-east-2.amazonaws.com/"+data.message;
+            user.profilePic=data.message;
             console.log(user.profilePic);
             this.userService.checkOldPass(user).subscribe(
               data=>{
@@ -321,7 +321,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
           data=>{
             console.log("We got the url:"+data.message);
             console.log(data.message);
-            user.profilePic="https://rev-training-p2-bucket.s3.us-east-2.amazonaws.com/"+data.message;
+            user.profilePic=data.message;
             console.log(user.profilePic);
             this.userService.updateUser(user).subscribe(
               data =>{

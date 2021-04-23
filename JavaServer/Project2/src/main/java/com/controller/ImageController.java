@@ -35,7 +35,8 @@ public class ImageController {
         file.transferTo(file1);
         s3Service.uploadFile(keyName, file1);
         loggy.info("Uploaded file with name: "+keyName+" to the S3 bucket.");
-        return new CustomResponseMessage(keyName);
+        String url=System.getenv("AWS_BUCKET_URL");
+        return new CustomResponseMessage(url+keyName);
     }
 
     @Autowired
