@@ -32,6 +32,7 @@ Current Features
 - Sucessfully deploy project on EC2
 - Implement Notifications of Likes and Comments
 - Implement Follower features
+- Implement Logging with Tomcat (Logging during unit tests is functional)
 
 ## Getting Started
 - First, you need to clone the project
