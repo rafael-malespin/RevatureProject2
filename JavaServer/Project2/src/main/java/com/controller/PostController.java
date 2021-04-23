@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*",  allowCredentials = "true")
+@CrossOrigin(origins = "http://localhost:4200",  allowCredentials = "true")
 @RequestMapping("/posts")
 public class PostController {
     private PostService postService;
-    final static Logger loggy = Logger.getLogger(UserController.class);
+    final static Logger loggy = Logger.getLogger("primaryLogger");
     static {
         loggy.setLevel(Level.ALL);
         //loggy.setLevel(Level.ERROR);

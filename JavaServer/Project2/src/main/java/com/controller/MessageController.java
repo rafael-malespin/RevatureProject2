@@ -14,12 +14,12 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*", allowCredentials = "true")
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 public class MessageController {
 
     private List<String> currentOnline = new ArrayList<>();
     private List<ChatMessage> currentMessages = new ArrayList<>();
-    final static Logger loggy = Logger.getLogger(UserController.class);
+    final static Logger loggy = Logger.getLogger("primaryLogger");
     static {
         loggy.setLevel(Level.ALL);
         //loggy.setLevel(Level.ERROR);

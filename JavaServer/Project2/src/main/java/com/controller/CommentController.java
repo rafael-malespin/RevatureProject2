@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class CommentController {
 
     private CommentService commentService;
-    final static Logger loggy = Logger.getLogger(UserController.class);
+    final static Logger loggy = Logger.getLogger("primaryLogger");
     static {
         loggy.setLevel(Level.ALL);
         //loggy.setLevel(Level.ERROR);

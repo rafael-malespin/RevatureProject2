@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*",  allowCredentials = "true")
+@CrossOrigin(origins = "http://localhost:4200",  allowCredentials = "true")
 @RequestMapping("/likes")
 public class LikeController {
     private LikeService likeService;
 
-    final static Logger loggy = Logger.getLogger(UserController.class);
+    final static Logger loggy = Logger.getLogger("primaryLogger");
     static {
         loggy.setLevel(Level.ALL);
         //loggy.setLevel(Level.ERROR);

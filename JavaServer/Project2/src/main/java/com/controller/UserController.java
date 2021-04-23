@@ -9,6 +9,7 @@ import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,16 +19,17 @@ import java.security.SecureRandom;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*", allowCredentials = "true")
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 @RequestMapping("/users")
 public class UserController {
 
     private UserService userService;
-    final static Logger loggy = Logger.getLogger(UserController.class);
+    final static Logger loggy = Logger.getLogger("primaryLogger");
     static {
         loggy.setLevel(Level.ALL);
         //loggy.setLevel(Level.ERROR);
     }
+
 
     /**
      * Api endpoint that returns an Array list of User objects from the service layer.

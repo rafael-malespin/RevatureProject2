@@ -10,20 +10,20 @@ com/model/Like.java
  com.model.Like
 com/service/LikeService.java
  com.service.LikeService
-com/controller/ImageController.java
- com.controller.ImageController
-com/controller/PostController.java
- com.controller.PostController
-com/controller/CommentController.java
- com.controller.CommentController
+com/service/PostService.java
+ com.service.PostService
+com/dao/UserDaoImpl.java
+ com.dao.UserDaoImpl
+com/service/UserService.java
+ com.service.UserService
 com/dao/CommentDaoImpl.java
  com.dao.CommentDaoImpl
 com/model/Comment.java
  com.model.Comment
 com/model/CustomResponseMessage.java
  com.model.CustomResponseMessage
-com/controller/MessageController.java
- com.controller.MessageController
+com/dao/PostDao.java
+ com.dao.PostDao
 com/dao/CommentDao.java
  com.dao.CommentDao
 com/model/User.java
@@ -38,25 +38,25 @@ com/service/UserServiceImpl.java
  com.service.UserServiceImpl
 com/model/Post.java
  com.model.Post
-com/controller/LikeController.java
- com.controller.LikeController
+com/service/S3Service.java
+ com.service.S3Service
 com/dao/PostDaoImpl.java
  com.dao.PostDaoImpl
 com/service/CommentServiceImpl.java
  com.service.CommentServiceImpl
+com/controller/CommentController.java
+ com.controller.CommentController
+com/controller/MessageController.java
+ com.controller.MessageController
+com/controller/LikeController.java
+ com.controller.LikeController
+com/controller/ImageController.java
+ com.controller.ImageController
+com/controller/PostController.java
+ com.controller.PostController
 com/config/WebSocketConfig.java
  com.config.WebSocketConfig
-com/dao/UserDaoImpl.java
- com.dao.UserDaoImpl
-com/service/S3Service.java
- com.service.S3Service
-com/service/UserService.java
- com.service.UserService
 com/controller/UserController.java
  com.controller.UserController
-com/service/PostService.java
- com.service.PostService
 com/service/S3ServiceImpl.java
  com.service.S3ServiceImpl
-com/dao/PostDao.java
- com.dao.PostDao
