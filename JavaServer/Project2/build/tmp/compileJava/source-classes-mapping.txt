@@ -50,13 +50,13 @@ com/controller/MessageController.java
  com.controller.MessageController
 com/controller/LikeController.java
  com.controller.LikeController
-com/controller/ImageController.java
- com.controller.ImageController
+com/service/S3ServiceImpl.java
+ com.service.S3ServiceImpl
 com/controller/PostController.java
  com.controller.PostController
 com/config/WebSocketConfig.java
  com.config.WebSocketConfig
 com/controller/UserController.java
  com.controller.UserController
-com/service/S3ServiceImpl.java
- com.service.S3ServiceImpl
+com/controller/ImageController.java
+ com.controller.ImageController
