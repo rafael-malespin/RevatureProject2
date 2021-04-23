@@ -1,17 +1,21 @@
 import * as SockJS from 'sockjs-client';
 import * as Stomp from 'stompjs';
 import { ChatComponent } from '../chat/chat.component';
+import { LoginService } from '../shared/login.service';
 
 export class WebSocketAPI {
     webSocketEndPoint: string = 'http://localhost:9001/toph/link/ws';
     topic: string = "/topic/messages";
     stompClient: any;
     chatComponent: ChatComponent;
-    constructor(chatComponent: ChatComponent) {
+    constructor(chatComponent: ChatComponent ,private loginServ:LoginService) {
         this.chatComponent = chatComponent;
     }
     _connect() {
         console.log("Start websocket connection");
+        if(this.loginServ.getCurrent()==null){
+            return;
+        }
         let ws = new SockJS(this.webSocketEndPoint);
         this.stompClient = Stomp.over(ws);
         const _this = this;

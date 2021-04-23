@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
         this.appCom = document.getElementById("home-navbar");
         this.appCom.setAttribute("style","display:none;");
         
-        this.container = document.getElementById('container2');
+        this.container = document.getElementById('container');
         this.loginService.setCurrent(data);
         console.log("LOGIN COMPONENT LOGIN: "+data);
         return data;

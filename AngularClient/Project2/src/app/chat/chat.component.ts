@@ -1,5 +1,5 @@
 import { ThrowStmt } from '@angular/compiler';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { WebSocketAPI } from '../api/WebSocketAPI';
@@ -32,6 +32,7 @@ export class ChatComponent implements OnInit,OnDestroy{
 
   constructor(private userService:GetUserService,private loginService:LoginService,private router:Router){
     this.allMessages=[];
+    window.addEventListener("unload", this.sendDisconnect.bind(this));
   }
 
   ngOnInit(): void {
@@ -44,14 +45,20 @@ export class ChatComponent implements OnInit,OnDestroy{
         }
         else {
            this.lastMsgSender = data.username;  
+           this.router.events.subscribe(
+             event =>{
+               this.sendDisconnect();
+             }
+           )
         }
+
 
       }
     )
     
     this.appCom = document.getElementById("home-navbar");
     this.appCom.setAttribute("style","");
-    this.webSocketAPI = new WebSocketAPI(this);
+    this.webSocketAPI = new WebSocketAPI(this,this.loginService);
     this.connect();
     this.sendStatus();
     let container = document.getElementById("msgContainer");
@@ -59,14 +66,20 @@ export class ChatComponent implements OnInit,OnDestroy{
     
   }
 
-
+  @HostListener('window:beforeunload')
   ngOnDestroy(): void {
+    
     this.sendDisconnect();
     console.log("ng destroy");
-    //if(this.onlineUsers.length == this.onlineUsers.length)
-    //setTimeout(function() {
+    window.removeEventListener("unload", this.sendDisconnect.bind(this));
     
-    //}, 5000);
+  }
+
+  logoutAndDisconnect(): void {
+    
+    this.sendDisconnect();
+    console.log("logout and disconnect");
+    
     
   }
 
@@ -118,20 +131,27 @@ export class ChatComponent implements OnInit,OnDestroy{
   sendStatus() {
     this.userService.getCurrentUser().subscribe(
       userName => {
-        this.webSocketAPI._sendStatus(userName.username);
-        this.sendForOldMessages();
+        if(userName!=null){
+          this.webSocketAPI._sendStatus(userName.username);
+          this.sendForOldMessages();
+        }
       }
     );
   }
-
+  
   sendDisconnect() {
-    this.userService.getCurrentUser().subscribe(
-      userName => {
-        console.log("send disconnect");
-        this.webSocketAPI._sendDisconnect(userName.username);
-        this.disconnect();
-      }
-    );
+    let userName=this.loginService.getCurrent();
+    if(userName !=null){
+      this.webSocketAPI._sendDisconnect(userName.username);
+      this.disconnect();
+    }
+    // this.userService.getCurrentUser().subscribe(
+    //   userName => {
+    //     console.log("send disconnect");
+    //     this.webSocketAPI._sendDisconnect(userName.username);
+    //     this.disconnect();
+    //   }
+    // );
   }
 
   handleStatus(newList) {

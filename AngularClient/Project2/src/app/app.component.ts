@@ -1,7 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { WebSocketAPI } from './api/WebSocketAPI';
 import { LoginComponent } from './login/login.component';
 import { User } from './model/User';
+import { GetUserService } from './shared/get-user.service';
 import { LoginService } from './shared/login.service';
 
 @Component({
@@ -16,7 +19,7 @@ export class AppComponent implements OnInit{
   public isShow: boolean = false ;
   down:boolean = false;
   constructor(private loginService:LoginService,private router:Router){
-
+    
   }
   
   title = 'Project2';
@@ -30,13 +33,20 @@ export class AppComponent implements OnInit{
 
 
   logout(){
-    this.loginService.logoutUser().subscribe();
-
-    this.appCom.setAttribute("style","display: none");
-    let currentUrl = this.router.url;
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+    // this.chatCom.logoutAndDisconnect();
+    //this.webSocketAPI._sendDisconnect(this.user.username);
+    this.loginService.logoutUser().subscribe(
+      data=>{
+        this.appCom.setAttribute("style","display: none");
+        let currentUrl = this.router.url;
+        this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
         this.router.navigate([currentUrl]);
     });
+      }
+    );
+    
+    
+    
 
 
   }
